@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>happybirthday</title>
+  <style>
+    /* Import font pixel */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: #ffe6f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      background: #fff;
+      border: 4px solid #ff99cc;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 4px 4px 0px #ff66a3;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .envelope {
+      font-size: 40px;
+      cursor: pointer;
+      animation: bounce 1s infinite alternate;
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    button {
+      font-family: 'Press Start 2P', cursive;
+      background: #ff99cc;
+      border: none;
+      padding: 10px 15px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 8px;
+      color: #FAF9F6;
+      box-shadow: 3px 3px 0 #ff4d94;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .letter, .gift {
+      display: none;
+      margin-top: 20px;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .gift img {
+      width: 120px;
+      image-rendering: pixelated;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="envelope" class="envelope">✉️</div>
+    <button id="openLetter">open here!</button>
+
+    <div id="letter" class="letter">
+      <p>Hi,<br><br>Happy Nineteen, yaa semoga diliat sih...<br><br>mau cerita sedikit dongg, gua pindah kampus tauu ke upnvj ngambil sains data, terus ternyata gua angkatan ke2 di prodi inii anjir, terus gua sekelas sama ade kelas gua di letris, terus, banyak deh.., kynya not something big news 
+      <br><br>setiap kali gua inget tentang lu, gua selalu merasa Bersalah, ditambah lu delete akun instagram gua, "seakan" lu ngasih tau secara paksa bahwa kita udh gabisa lagi even itu berteman.
+      tapi gua gabakal tanya apapun tentang itu, gua hanya berharap semoga lu senangg dan bahagiaa disana.
+      <br>semoga gua tetap ada dipikiran lu , like me
+      <br><br>i don't even know where my instinct comes from, but I'm sure we'll meet again.<br><br><br></p>
+      <button id="showGift">kesukaan lu nih</button>
+    </div>
+
+    <div id="gift" class="gift">
+      <style>
+        img {
+          border-radius: 5%;
+        }
+      </style>
+      <img src="jeno.jpg" alt="Hadiah">
+      <p>Viva La Vida!<br><br>Savina!</p>
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById("openLetter");
+    const letter = document.getElementById("letter");
+    const giftBtn = document.getElementById("showGift");
+    const gift = document.getElementById("gift");
+
+    openBtn.addEventListener("click", () => {
+      letter.style.display = "block";
+      openBtn.style.display = "none";
+      document.getElementById("envelope").style.display = "none";
+    });
+
+    giftBtn.addEventListener("click", () => {
+      gift.style.display = "block";
+      giftBtn.style.display = "none";
+    });
+  </script>
+</body>
+</html>
